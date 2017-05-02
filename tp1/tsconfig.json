@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "sourceMap": true
+    },
+    "files": [
+       "app.ts"
+    ],
+
+    "include": [
+        "spec/**/*"
+    ]
+}

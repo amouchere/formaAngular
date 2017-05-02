@@ -1,0 +1,17 @@
+{
+    "extends": "tslint:recommended",
+    "rulesDirectory": ["."],
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        },
+        "quotemark": [true, "single", "avoid-escape"],
+        "semicolon": [true, "always"],
+        "indent": [true, "spaces"]
+    },
+    "jsRules": {
+        "max-line-length": {
+            "options": [120]
+        }
+    }
+}
