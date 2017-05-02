@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "sourceMap": true
+    },
+    "files": [
+       "app.ts",
+       "pizza.ts"
+    ],
+
+    "include": [
+        "spec/**/*"
+    ]
+}

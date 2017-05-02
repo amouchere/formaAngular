@@ -1,6 +1,5 @@
-///<reference path="../node_modules/@types/jasmine/index.d.ts"/> 
-///<reference path="../app.ts"/>
-
+///<reference path="../node_modules/@types/jasmine/index.d.ts"/>
+import {bonjour} from './../app'
 
 describe('Bonjour function:', () => {
     describe('with one parameter:', () => {
@@ -23,4 +22,3 @@ describe('Bonjour function:', () => {
         });
     });
 });
-
