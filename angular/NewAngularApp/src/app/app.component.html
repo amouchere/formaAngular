@@ -1,4 +1,45 @@
-<h1>
-  {{title}}
-</h1>
- <h1>This	is	my	first	component</h1>
+<app-menu>
+  Loading...
+</app-menu>
+
+<div class="container">
+
+  <header class="jumbotron hero-spacer">
+    <h1>Bienvenue sur Zenika Ecommerce</h1>
+    <p>Votre panier s'élève à {{total}}€</p>
+    <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
+  </header>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Derniers Produits</h2>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="products[0]">
+      Loading...
+    </app-product-component>
+
+    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[1]">
+      Loading...
+    </app-product-component>
+
+    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[2]">
+      Loading...
+    </app-product-component>
+
+    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[3]">
+      Loading...
+    </app-product-component>
+  </div>
+
+  <hr>
+
+  <app-footer>
+    Loading...
+  </app-footer>
+
+</div>
