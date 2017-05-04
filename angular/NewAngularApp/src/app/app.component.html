@@ -6,7 +6,7 @@
 
   <header class="jumbotron hero-spacer">
     <h1>Bienvenue sur Zenika Ecommerce</h1>
-    <p>Votre panier s'élève à {{total}}€</p>
+    <p [ngStyle]="{'font-size': size}">Votre panier s'élève à {{total}}€</p>
     <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
   </header>
 
@@ -19,21 +19,17 @@
   </div>
 
   <div class="row text-center">
-    <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="products[0]">
-      Loading...
-    </app-product-component>
 
-    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[1]">
-      Loading...
-    </app-product-component>
+    <ng-template ngFor let-item [ngForOf]="products" let-i="index">
+      <ng-template [ngIf]="item.stock > 0">
+        <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="item">
+          Loading...
+        </app-product-component>
+      </ng-template>
 
-    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[2]">
-      Loading...
-    </app-product-component>
+    </ng-template>
 
-    <app-product-component  (addToBasketEvent)="onAddToBasket($event)" [data]="products[3]">
-      Loading...
-    </app-product-component>
+
   </div>
 
   <hr>

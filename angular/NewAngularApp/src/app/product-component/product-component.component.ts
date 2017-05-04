@@ -20,7 +20,9 @@ export class ProductComponentComponent implements OnInit {
   }
 
   public addToBasket(): void {
-    console.log(`Add a product to Basket ${this.data.getTitle} with price ${this.data.getPrice}`);
+    console.log(`Add a product to Basket ${this.data.title} with price ${this.data.getPrice}`);
+    let currentStock = this.data.stock;
+    this.data.stock = currentStock - 1;
     this.addToBasketEvent.emit(this.data);
   }
 }
