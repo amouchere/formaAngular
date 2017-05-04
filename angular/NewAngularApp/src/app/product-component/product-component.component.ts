@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './../model/product';
+import { ProductService } from "app/service/product.service";
 
 @Component({
   selector: 'app-product-component',
@@ -7,6 +8,7 @@ import { Product } from './../model/product';
   styleUrls: ['./product-component.component.css']
 })
 export class ProductComponentComponent implements OnInit {
+  private productService: ProductService;
 
   @Input()
   public data: Product;
@@ -14,14 +16,19 @@ export class ProductComponentComponent implements OnInit {
   @Output()
   private addToBasketEvent: EventEmitter<Product> = new EventEmitter<Product>();
 
-  constructor() { }
+  constructor(productService: ProductService) {
+    this.productService = productService;
+  }
 
   ngOnInit() {
   }
 
   public addToBasket(): void {
     console.log(`Add a product to Basket ${this.data.title} with price ${this.data.price}`);
-    this.data.stock--;
     this.addToBasketEvent.emit(this.data);
+  }
+
+  public isTheLast(): boolean {
+    return this.productService.isTheLast(this.data.title);
   }
 }

@@ -8,7 +8,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 export class MouseOverDirective {
 
   @HostBinding('style.backgroundColor')
-  color = '#fff';
+  color = '';
 
   constructor() { }
 

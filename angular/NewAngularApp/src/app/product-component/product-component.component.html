@@ -1,8 +1,8 @@
 <div class="col-md-3 col-sm-6 hero-feature">
-  <div class="thumbnail" [ngClass]="{'last': data.stock === 1}">
+  <div class="thumbnail" [ngClass]="{'last': isTheLast()}">
     <img src="{{ data.photo }}" alt="">
     <div class="caption">
-      <h3>{{ data.title }} - {{ data.price }}€</h3>
+      <h3>{{ data.title }} - {{ data.price | currency:'EUR':true }}</h3>
       <p>{{ data.description }}</p>
       <p appMouseOver>stock: {{ data.stock }}</p>
       <p>

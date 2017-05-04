@@ -5,7 +5,7 @@
 <div class="container">
 
   <header class="jumbotron hero-spacer">
-    <h1>Bienvenue sur Zenika Ecommerce</h1>
+    <h1>{{title}}</h1>
     <p [ngStyle]="{'color': color}">Votre panier s'élève à {{total}}€</p>
     <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
   </header>
@@ -21,7 +21,7 @@
   <div class="row text-center">
 
     <ng-template ngFor let-item [ngForOf]="products" let-i="index">
-      <ng-template [ngIf]="item.stock > 0">
+      <ng-template [ngIf]="isAvailable(item.title)">
         <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="item">
           Loading...
         </app-product-component>
@@ -33,7 +33,7 @@
   </div>
 
   <hr>
-  
+
   <!-- On met du contenu dans app footer. Ce contenu sera inséré dans le ng-content du component app-footer -->
   <app-footer>
     <footer>

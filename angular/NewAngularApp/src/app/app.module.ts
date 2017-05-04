@@ -8,6 +8,10 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponentComponent } from './product-component/product-component.component';
 import { MouseOverDirective } from './mouse-over.directive';
+import { CustomerService } from "app/service/customer.service";
+import { ProductService } from "app/service/product.service";
+
+const siteTitle: string = 'Bienvenue sur Zenika Ecommerce';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,13 @@ import { MouseOverDirective } from './mouse-over.directive';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'siteTitle', useValue: siteTitle
+    },
+    CustomerService,
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

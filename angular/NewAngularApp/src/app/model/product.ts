@@ -14,15 +14,15 @@ export class Product {
             -- stock ${_stock}`);
     }
 
-    public get description(): String {
+    public get description(): string {
         return this._description;
     }
 
-    public get photo(): String {
+    public get photo(): string {
         return this._photo;
     }
 
-    public get title(): String {
+    public get title(): string {
         return this._title;
     }
 
