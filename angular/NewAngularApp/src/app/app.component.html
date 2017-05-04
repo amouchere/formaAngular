@@ -20,7 +20,7 @@
 
   <div class="row text-center">
 
-    <ng-template ngFor let-item [ngForOf]="products" let-i="index">
+    <ng-template ngFor let-item [ngForOf]="products | mysorting" let-i="index">
       <ng-template [ngIf]="isAvailable(item.title)">
         <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="item">
           Loading...

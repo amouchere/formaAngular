@@ -10,6 +10,7 @@ import { ProductComponentComponent } from './product-component/product-component
 import { MouseOverDirective } from './mouse-over.directive';
 import { CustomerService } from "app/service/customer.service";
 import { ProductService } from "app/service/product.service";
+import { SortingPipe } from './pipe/sorting.pipe';
 
 const siteTitle: string = 'Bienvenue sur Zenika Ecommerce';
 
@@ -19,7 +20,8 @@ const siteTitle: string = 'Bienvenue sur Zenika Ecommerce';
     MenuComponent,
     FooterComponent,
     ProductComponentComponent,
-    MouseOverDirective
+    MouseOverDirective,
+    SortingPipe
   ],
   imports: [
     BrowserModule,

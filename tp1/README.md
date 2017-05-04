@@ -38,3 +38,5 @@ jasmine
 # prend par défaut les tests dans spec/  
 # ne compile pas avant... relancer tsc avant les tests
 ```
+
+https://jasmine.github.io/
