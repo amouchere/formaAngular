@@ -12,7 +12,7 @@ export class ProductComponentComponent implements OnInit {
   public data: Product;
 
   @Output()
-  addToBasketEvent: EventEmitter<Product> = new EventEmitter<Product>();
+  private addToBasketEvent: EventEmitter<Product> = new EventEmitter<Product>();
 
   constructor() { }
 
