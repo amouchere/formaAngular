@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponentComponent } from './product-component/product-component.component';
+import { MouseOverDirective } from './mouse-over.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FooterComponent,
-    ProductComponentComponent
+    ProductComponentComponent,
+    MouseOverDirective
   ],
   imports: [
     BrowserModule,

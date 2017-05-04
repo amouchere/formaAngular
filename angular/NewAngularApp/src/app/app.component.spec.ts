@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from "app/menu/menu.component";
+import { FooterComponent } from "app/footer/footer.component";
+import { ProductComponentComponent } from "app/product-component/product-component.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        MenuComponent,
+        FooterComponent,
+        ProductComponentComponent
       ],
     }).compileComponents();
   }));
@@ -27,6 +33,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(compiled.querySelector('header h1').textContent).toContain('Zenika');
   }));
 });

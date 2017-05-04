@@ -9,7 +9,7 @@ import { Product } from './model/product';
 export class AppComponent implements OnInit {
   title = 'app works!';
   total = 0;
-  size = '20px';
+  color = 'black';
   basket: Product[] = [];
 
   products: Product[] = [
@@ -20,14 +20,14 @@ export class AppComponent implements OnInit {
   ]
 
   public onAddToBasket(data: Product): void {
-    console.log(`New product in basket with price ${data.getPrice}`);
-    this.total += data.getPrice;
+    console.log(`New product in basket with price ${data.price}`);
+    this.total += data.price;
     this.basket.push(data);
 
-    this.size = "40px";
+    this.color = "red";
     setTimeout(() => {
-      this.size = "20px";
-      console.log("restore size " + this.size)
+      this.color = "black";
+      console.log("restore color " + this.color)
     }, 3000);
   }
 

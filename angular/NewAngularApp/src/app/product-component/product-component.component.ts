@@ -9,7 +9,7 @@ import { Product } from './../model/product';
 export class ProductComponentComponent implements OnInit {
 
   @Input()
-  private data: Product;
+  public data: Product;
 
   @Output()
   addToBasketEvent: EventEmitter<Product> = new EventEmitter<Product>();
@@ -20,9 +20,8 @@ export class ProductComponentComponent implements OnInit {
   }
 
   public addToBasket(): void {
-    console.log(`Add a product to Basket ${this.data.title} with price ${this.data.getPrice}`);
-    let currentStock = this.data.stock;
-    this.data.stock = currentStock - 1;
+    console.log(`Add a product to Basket ${this.data.title} with price ${this.data.price}`);
+    this.data.stock--;
     this.addToBasketEvent.emit(this.data);
   }
 }

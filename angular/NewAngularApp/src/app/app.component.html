@@ -6,7 +6,7 @@
 
   <header class="jumbotron hero-spacer">
     <h1>Bienvenue sur Zenika Ecommerce</h1>
-    <p [ngStyle]="{'font-size': size}">Votre panier s'élève à {{total}}€</p>
+    <p [ngStyle]="{'color': color}">Votre panier s'élève à {{total}}€</p>
     <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
   </header>
 
@@ -33,9 +33,12 @@
   </div>
 
   <hr>
-
+  
+  <!-- On met du contenu dans app footer. Ce contenu sera inséré dans le ng-content du component app-footer -->
   <app-footer>
-    Loading...
+    <footer>
+      Copyright &copy; Your Website 2016
+    </footer>
   </app-footer>
 
 </div>

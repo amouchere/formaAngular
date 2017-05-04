@@ -4,7 +4,7 @@
     <div class="caption">
       <h3>{{ data.title }} - {{ data.price }}€</h3>
       <p>{{ data.description }}</p>
-      <p>stock: {{ data.stock }}</p>
+      <p appMouseOver>stock: {{ data.stock }}</p>
       <p>
         <button (click)="addToBasket()" class="btn btn-primary">Ajoutez au panier</button>
       </p>
