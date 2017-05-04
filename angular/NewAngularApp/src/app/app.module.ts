@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -30,6 +30,8 @@ const siteTitle: string = 'Bienvenue sur Zenika Ecommerce';
     {
       provide: 'siteTitle', useValue: siteTitle
     },
+    {	provide:	LOCALE_ID,	useValue:	'fr-FR'	},
+
     CustomerService,
     ProductService
   ],
