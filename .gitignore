@@ -1,6 +1,8 @@
 .vscode
 node_modules
 
-*.js
+angular/**/*.js
+
+tp1/**/*.js
 
 *.map
