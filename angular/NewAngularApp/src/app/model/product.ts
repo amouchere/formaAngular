@@ -14,8 +14,4 @@ export class Product {
             -- stock ${stock}`);
     }
 
-  
-
-
 }
-

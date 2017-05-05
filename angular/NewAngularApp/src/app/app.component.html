@@ -1,44 +1,14 @@
 <app-menu>
   Loading...
 </app-menu>
-
 <div class="container">
-
-  <header class="jumbotron hero-spacer">
-    <h1>{{title}}</h1>
-    <p [ngStyle]="{'color': color}">Votre panier s'élève à {{total}}€</p>
-    <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
-  </header>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-lg-12">
-      <h2>Derniers Produits</h2>
-    </div>
-  </div>
-
-  <div class="row text-center">
-
-    <ng-template ngFor let-item [ngForOf]="products | mysorting" let-i="index">
-      <ng-template [ngIf]="isAvailable(item.title)">
-        <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="item">
-          Loading...
-        </app-product-component>
-      </ng-template>
-
-    </ng-template>
-
-
-  </div>
-
-  <hr>
-
-  <!-- On met du contenu dans app footer. Ce contenu sera inséré dans le ng-content du component app-footer -->
-  <app-footer>
-    <footer>
-      Copyright &copy; Your Website 2016
-    </footer>
-  </app-footer>
-
+  <router-outlet></router-outlet>
 </div>
+<hr>
+
+<!-- On met du contenu dans app footer. Ce contenu sera inséré dans le ng-content du component app-footer -->
+<app-footer>
+  <footer>
+    Copyright &copy; Your Website 2016
+  </footer>
+</app-footer>

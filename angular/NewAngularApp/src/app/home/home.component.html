@@ -1,0 +1,31 @@
+
+<div class="container">
+
+  <header class="jumbotron hero-spacer">
+    <h1>{{title}}</h1>
+    <p [ngStyle]="{'color': color}">Votre panier s'élève à {{total}}€</p>
+    <p><a  (click)="goToBasket()" class="btn btn-primary btn-large">Voir mon panier</a></p>
+  </header>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Derniers Produits</h2>
+    </div>
+  </div>
+
+  <div class="row text-center">
+
+    <ng-template ngFor let-item [ngForOf]="products | mysorting" let-i="index">
+      <ng-template [ngIf]="isAvailable(item.title)">
+        <app-product-component (addToBasketEvent)="onAddToBasket($event)" [data]="item">
+          Loading...
+        </app-product-component>
+      </ng-template>
+
+    </ng-template>
+
+
+  </div>
+</div>

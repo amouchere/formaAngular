@@ -19,6 +19,10 @@ export class CustomerService {
     return this.http.post("http://localhost:8080/rest/basket", product);
   }
 
+  public checkoutBasket(): Observable<Response> {
+    return this.http.post("http://localhost:8080/rest/basket/confirm", "");
+  }
+
   public getBasket(): Observable<Response> {
     let result: Observable<Response> = this.http.get("http://localhost:8080/rest/basket")
       .map((result: Response): any => result.json())
